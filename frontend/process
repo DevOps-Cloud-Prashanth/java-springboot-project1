@@ -5,20 +5,20 @@ pip install --upgrade pip
 pip install streamlit requests
 vi /etc/systemd/system/frontend.service
 
-[Unit]
-Description=Streamlit Frontend App
-After=network.target
+#[Unit]
+#Description=Streamlit Frontend App
+#After=network.target
 
-[Service]
-User=root
-WorkingDirectory=/root 
-ExecStart=/root/venv/bin/streamlit run app.py --server.port=8501 --server.address=0.0.0.0
-Environment=API_URL=http://172.31.25.254:8084
-Restart=always
-RestartSec=5
+#[Service]
+z3User=root
+#WorkingDirectory=/root 
+#ExecStart=/root/venv/bin/streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+3Environment=API_URL=http://172.31.25.254:8084
+#Restart=always
+#RestartSec=5
 
-[Install]
-WantedBy=multi-user.target
+#[Install]
+#WantedBy=multi-user.target
 
 
 #if app.py is in /root home directory 
@@ -32,7 +32,7 @@ After=network.target
 User=root
 WorkingDirectory=/root/Java-springboot-project/frontend
 ExecStart=/root/Java-springboot-project/frontend/venv/bin/python -m streamlit run /root/Java-springboot-project/frontend/app.py --server.port=8501 --server.address=0.0.0.0
-Environment=API_URL=http://172.31.25.254:8084
+Environment=API_URL=http://172.31.5.250:8084
 Restart=always
 RestartSec=5
 
