@@ -10,10 +10,10 @@ vi /etc/systemd/system/frontend.service
 #After=network.target
 
 #[Service]
-z3User=root
+#User=root
 #WorkingDirectory=/root 
 #ExecStart=/root/venv/bin/streamlit run app.py --server.port=8501 --server.address=0.0.0.0
-3Environment=API_URL=http://172.31.25.254:8084
+#Environment=API_URL=http://172.31.25.254:8084
 #Restart=always
 #RestartSec=5
 
